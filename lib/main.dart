@@ -29,12 +29,12 @@ class JeffMainPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.green,
-        foregroundColor: Colors.blue,
+        foregroundColor: Colors.white,
         title: const Text("Jeff's app"),
         actions: const [Icon(Icons.search), Icon(Icons.person)],
       ),
-      body: Center(
-          child: ListTile(
+      body: Column(
+          children: [ListTile(
         leading: CircleAvatar(
             radius: 30,
             backgroundImage: AssetImage("assets/images/profile.jfif")),
@@ -63,7 +63,25 @@ class JeffMainPage extends StatelessWidget {
             Text("4:55")
           ],
         ),
-      )),
+      ),
+      //this is my listTile
+
+      Card( color: Colors.blue,elevation: 5,
+            
+        child: ListTile(
+          leading: const CircleAvatar(radius: 30, backgroundColor: Colors.red,backgroundImage: AssetImage( "assets/images/flex.jfif")
+        ,),
+        title: Text("Sammy"),
+        subtitle: Text("Sir am done"),
+           
+           trailing: Column(children:const [Text("4:35"),SizedBox(height: 5),CircleAvatar(child: Text("4"),backgroundColor: Colors.green,radius: 10,
+           )
+          ]
+           ,)
+           , ),
+      )
+      
+    ])
     );
   }
 }
